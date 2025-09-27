@@ -4,24 +4,26 @@ A React-based chat interface that converts natural language queries into SQL usi
 
 ## Features
 
-- Natural Language to SQL conversion
-- Chat interface with React and Tailwind CSS
-- IBM watsonx.ai integration with Mistral AI models
-- ReAct agent pattern using LangChain
-- Message persistence ready for database integration with StoredMessage serialization
+- Natural Language to SQL conversion powered by AI
+- Interactive chat interface built with React and Tailwind CSS (dark mode)
+- IBM watsonx.ai integration utilizing Mistral AI models
+- ReAct agent pattern using LangChain for robust reasoning and actions
+- Message persistence designed for database integration with StoredMessage serialization
+- Scrollable chat UI with distinct, styled AI SQL query outputs
+- Sidebar for displaying full database schema with syntax-friendly formatting
 
 ## Tech Stack
 
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **AI/ML**: LangChain, IBM watsonx.ai, Mistral AI
-- **State Management**: React useState hooks
-- **Build Tool**: Next.js
+- **Frontend:** React, TypeScript, Tailwind CSS (with dark mode support)
+- **AI/ML:** LangChain, IBM watsonx.ai, Mistral AI
+- **State Management:** React useState, useRef hooks
+- **Build Tool:** Next.js
 
 ## Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 18+ and npm/yarn
 - IBM watsonx.ai account and API credentials
-- Basic understanding of SQL and React
+- Basic understanding of SQL, React, and AI agents
 
 ## Installation
 
@@ -36,52 +38,58 @@ A React-based chat interface that converts natural language queries into SQL usi
    npm install
    ```
 
-3. Set up environment variables in `.env.local` file
+3. Set up environment variables in `.env.local`
    ```
    WATSONX_AI_PROJECT_ID=your_project_id_here
    WATSONX_AI_ENDPOINT=https://us-south.ml.cloud.ibm.com
    WATSONX_AI_VERSION=2023-05-29
    ```
 
-4. Run development server
+4. Run the development server
    ```
    npm run dev
    ```
 
-5. Open browser at `http://localhost:3000`
+5. Open your browser at `http://localhost:3000`
 
 ## Configuration
 
 ### IBM watsonx.ai Setup
 
-1. Sign up for IBM watsonx.ai account
-2. Create new project
-3. Get project ID and API endpoint
-4. Ensure access to Mistral AI models
+- Create an IBM watsonx.ai account
+- Set up a new project and obtain the project ID and API endpoint
+- Ensure access to Mistral AI models for natural language processing
 
 ### Model Configuration
 
-The agent uses `mistralai/mistral-large`. Modify in `actions.ts` if needed.
+- The default model used is `mistralai/mistral-large` (configurable in `actions.ts`)
 
 ## Usage
 
-1. Type natural language query in input field
-2. Click Submit to send query
-3. Agent processes request and generates response
-4. View conversation history in chat interface
+1. Enter your natural language query in the input textarea.
+2. Press `Enter` or click `Send` (Shift+Enter inserts newline).
+3. The agent converts your input to a SQL query, which is displayed as a syntax-highlighted code bubble.
+4. View your full conversation history in a scrollable chat interface.
+5. Reference the database schema conveniently in the sidebar for guidance.
 
 ### Example Queries
 
 - "Show me all customers"
 - "Find orders from last week"
-- "Get total sales by region"
+- "Get total sales by region ordered by create_date"
 
 ## Project Structure
 
 ```
 app/
-├── page.tsx          # Main chat interface
-└── actions.ts        # LangChain agent logic
-components/
-public/
+├── page.tsx          # Main chat UI component with dark mode and chat logic
+└── actions.ts        # LangChain agent and AI interaction logic
+
+components/           # Optional reusable UI components (if applicable)
+public/               # Static assets
+constant.ts           # Database schema SQL constants
 ```
+```
+[8](https://www.geeksforgeeks.org/git/what-is-readme-md-file/)
+[9](https://confluence.atlassian.com/spaces/BitbucketServer/pages/776639995/Markdown+syntax+guide)
+[10](https://learn.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops)
